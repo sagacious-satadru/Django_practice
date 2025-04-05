@@ -1,0 +1,147 @@
+{% load static %} {% block title %}About Us - My
+Awesome Site{% endblock %} {% block extra_head %}
+<style>
+  body {
+    /* Optional: Add a subtle background pattern or color */
+    /* background-color: #f8f9fa; */
+  }
+  .about-header {
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: white;
+    padding: 4rem 2rem;
+    margin-bottom: 3rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .about-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .about-header p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+  }
+  .section-title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+  }
+  .section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #0d6efd; /* Bootstrap primary blue */
+    margin: 0.5rem auto 0;
+  }
+  .content-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  .content-section h3 {
+    color: #0d6efd;
+    margin-bottom: 1rem;
+  }
+  .icon-feature {
+    font-size: 2.5rem; /* You'd use an icon font like FontAwesome here */
+    color: #0d6efd;
+    margin-bottom: 1rem;
+    display: block; /* Or inline-block if needed */
+    text-align: center; /* Center icon if using FontAwesome */
+  }
+  .card-custom {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Make cards in a row equal height */
+  }
+  .card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+  .card-body-custom {
+    text-align: center;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="about-header">
+  <h1>About Our Journey</h1>
+  <p>Discover the story, mission, and values that drive us forward.</p>
+</div>
+
+<section class="our-story content-section">
+  <h2 class="section-title">Our Story</h2>
+  <p>
+    Founded in [Year], My Awesome Site started with a simple idea: [Explain the
+    core idea or problem you solve]. We saw a need for [Describe the need] and
+    set out to create a solution that was [Adjective 1], [Adjective 2], and
+    [Adjective 3].
+  </p>
+  <p>
+    From humble beginnings in [Location or context], we've grown into a
+    passionate team dedicated to [Your main goal or service]. We believe in the
+    power of [Your core belief, e.g., technology, community, creativity] to make
+    a difference.
+  </p>
+</section>
+
+<section class="mission-vision mb-5">
+  <h2 class="section-title">Mission & Vision</h2>
+  <div class="row g-4">
+    <div class="col-md-6">
+      <div class="card card-custom">
+        <div class="card-body card-body-custom">
+          <!-- Replace text with actual icon e.g., <i class="fas fa-bullseye icon-feature"></i> -->
+          <span class="icon-feature">🎯</span>
+          <h3 class="card-title">Our Mission</h3>
+          <p class="card-text">
+            To empower [Target Audience] by providing [Your Product/Service]
+            that is innovative, accessible, and impactful.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card card-custom">
+        <div class="card-body card-body-custom">
+          <!-- Replace text with actual icon e.g., <i class="fas fa-eye icon-feature"></i> -->
+          <span class="icon-feature">👁️</span>
+          <h3 class="card-title">Our Vision</h3>
+          <p class="card-text">
+            To be the leading platform for [Your Field/Industry], recognized for
+            our commitment to quality, customer success, and positive change.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="our-values content-section">
+  <h2 class="section-title">Our Core Values</h2>
+  <div class="row g-3 text-center">
+    <div class="col-md-4">
+      <h5><i class="fas fa-lightbulb me-2"></i>Innovation</h5>
+      {/* Assumes FontAwesome */}
+      <p>We constantly seek new and better ways to solve problems.</p>
+    </div>
+    <div class="col-md-4">
+      <h5><i class="fas fa-users me-2"></i>Customer Focus</h5>
+      {/* Assumes FontAwesome */}
+      <p>Our customers' success is our primary measure of achievement.</p>
+    </div>
+    <div class="col-md-4">
+      <h5><i class="fas fa-shield-alt me-2"></i>Integrity</h5>
+      {/* Assumes FontAwesome */}
+      <p>We operate with honesty, transparency, and respect.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

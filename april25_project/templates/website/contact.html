@@ -1,0 +1,178 @@
+{% load static %} {% block title %}Contact Us - My
+Awesome Site{% endblock %} {% block extra_head %}
+<style>
+  .contact-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .contact-header h1 {
+    font-weight: bold;
+    color: #333;
+  }
+  .contact-header p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  .contact-form-section {
+    padding: 2.5rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem; /* Add space below form */
+  }
+  .contact-details-section {
+    padding: 2rem;
+    background-color: #f8f9fa; /* Light background for contrast */
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    height: 100%; /* Match height if form is taller */
+  }
+  .contact-details-section h3 {
+    color: #0d6efd; /* Bootstrap primary blue */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+  }
+  .contact-details-section p {
+    margin-bottom: 1rem;
+    color: #495057;
+  }
+  .contact-details-section i {
+    /* Style for icons */
+    color: #0d6efd;
+    margin-right: 0.75rem;
+    width: 20px; /* Align icons nicely */
+    text-align: center;
+  }
+  .form-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  }
+  .btn-primary-custom {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-primary-custom:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+  }
+</style>
+{% endblock %} {% block content %}
+<div class="contact-header">
+  <h1>Get In Touch</h1>
+  <p>
+    We're here to help and answer any question you might have. We look forward
+    to hearing from you!
+  </p>
+</div>
+
+<div class="row g-4">
+  {# Contact Form Section #}
+  <div class="col-lg-7">
+    <div class="contact-form-section">
+      <h3 class="mb-4">Send us a Message</h3>
+      {# NOTE: You need a Django view to handle this form submission #} {# and a
+      URL pattern named 'contact_submit' (or similar) #}
+      <form action="{% url 'contact' %}" method="post">
+        {% csrf_token %} {# Important for Django forms #}
+
+        <div class="mb-3">
+          <label for="contactName" class="form-label">Your Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="contactName"
+            name="name"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="contactEmail" class="form-label">Your Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="contactEmail"
+            name="email"
+            required
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="contactSubject" class="form-label">Subject</label>
+          <input
+            type="text"
+            class="form-control"
+            id="contactSubject"
+            name="subject"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="contactMessage" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="contactMessage"
+            name="message"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary-custom w-100">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </div>
+
+  {# Contact Details Section #}
+  <div class="col-lg-5">
+    <div class="contact-details-section">
+      <h3>Contact Information</h3>
+      <p>
+        {/* Replace with actual Font Awesome icon if using */}
+        <i class="fas fa-map-marker-alt"></i>
+        <strong>Address:</strong><br />
+        123 Innovation Drive<br />
+        Tech City, TX 75001, USA
+      </p>
+      <p>
+        {/* Replace with actual Font Awesome icon if using */}
+        <i class="fas fa-phone"></i>
+        <strong>Phone:</strong><br />
+        <a href="tel:+1234567890">+1 (234) 567-890</a>
+      </p>
+      <p>
+        {/* Replace with actual Font Awesome icon if using */}
+        <i class="fas fa-envelope"></i>
+        <strong>Email:</strong><br />
+        <a href="mailto:info@myawesomesite.com">info@myawesomesite.com</a>
+      </p>
+      <p>
+        {/* Replace with actual Font Awesome icon if using */}
+        <i class="fas fa-clock"></i>
+        <strong>Business Hours:</strong><br />
+        Monday - Friday: 9:00 AM - 5:00 PM
+      </p>
+      {# Optional: Add a simple map embed here if desired #} {#
+      <div class="mt-4">
+        #} {#
+        <iframe
+          src="https://www.google.com/maps/embed?pb=..."
+          width="100%"
+          height="250"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+        #} {#
+      </div>
+      #}
+    </div>
+  </div>
+</div>
+{% endblock %}
